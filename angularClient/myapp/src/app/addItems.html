@@ -1,0 +1,85 @@
+<table>
+    <tr>
+        <td>
+            <b>ID</b>
+        </td>
+    </tr>
+    <tr>
+        <input type="text" [(ngModel)]="_id" />
+    </tr>
+    <tr>
+        <td>
+            <b>Item Name</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text"   [(ngModel)]="_productName" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Price</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text"   [(ngModel)]="_price" />
+        </td>
+    </tr>
+    <tr>
+        <input type="submit" value="Add Item" (click)="createProduct()">
+    </tr>
+</table>
+
+<br>
+
+<table>
+    <tr *ngFor="let product of _productsArray">
+        <td>
+            <b>{{product._id}}</b>
+        </td>
+        <td>
+            {{product.productName}}
+        </td>
+        <td>
+            ${{product.price.toFixed(2)}}
+        </td>
+        <td>
+            <a href="/add-items" (click)="deleteProduct(product._id)">Delete</a>
+        </td>
+    </tr>
+</table>
+  
+{{_errorMessage}}
+
+  
+  <!-- Find Single Item
+  <h3>Get Single Item</h3>
+  <table>
+  <tr *ngFor="let product of _productsArray">
+      <td>
+          {{product.productName}}
+      </td>
+      <td>
+          <input type="radio"  name="selectProduct" value={{product._id}}
+          (click)="getProduct(product._id)">
+      </td>
+  </tr>
+  
+  </table>
+  
+  <br>
+  <b>{{_singleProductName}} {{_singleProductNumber}}</b> -->
+  
+    
+  <!-- Edit data
+  <h3>Edit Data</h3>
+  <select [(ngModel)]="_editId">
+    <option *ngFor="let product of _productsArray" value={{product._id}}>
+    {{product._id}} {{product.productName}}
+    </option>
+  </select>
+  Updated Name: <input type="text" [(ngModel)]="_editableProductName">
+  <input type="submit" value="Submit New Name" (click)="updateProduct()">
+  <hr/> -->

@@ -1,0 +1,95 @@
+<table>
+    <tr>
+      <td><b>Server name</b>:   <input type ="text" [(ngModel)]="_serverName"></td>
+      <td></td>
+      <td>Apply 15% Discount <input type="checkbox" (click)="discount()"></td>
+    </tr>
+  
+  </table>
+
+  <!-- Show all items -->
+<table width='25%' style="border: 3px solid black; border-collapse: collapse; padding: 5px; text-align:center" >
+    <tr *ngFor="let product of _productsArray" style="border: 2px solid black">
+        <td>
+            {{product.productName}}
+        </td>
+        <td>
+            {{product.price.toFixed(2)}}
+        </td>
+        <td>
+            <input type="button" value="+" (click)="alterOrder(product._id, '+')">
+        </td>
+        <td>
+            <input type="button" value="-" (click)="alterOrder(product._id, '-')">
+        </td>
+        <td>
+            {{_quantities[product._id]}}
+        </td>
+
+    </tr>
+</table>
+
+<br>
+
+<table *ngIf="_discount; else elseBlock" width='25%'>
+    <thead>
+        <th style="text-align: left;">Server Name</th>
+        <th style="text-align: right;">{{_serverName}}</th>
+    </thead>
+    <tr>
+        <td>Subtotal:</td>
+        <td style="text-align: right;">{{_subtotal}}</td>
+    </tr>
+    <tr>
+        <td>15% Discount</td>
+        <td style="text-align: right;">-{{_discountVal}}</td>
+    </tr>
+    <tr>
+        <td>+ 7% Tax</td>
+        <td style="text-align: right;">{{_tax}}</td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td style="text-align: right;">${{_total}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td  style="text-align: right;"><input type="button" (click)="submitOrder()" value="Submit Order" ></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td  style="text-align: right;"><input type="button" (click)="clearOrder()" value="Clear Order" ></td>
+    </tr>
+</table>
+
+<ng-template #elseBlock>
+    <table width='25%'>
+        <thead>
+            <th style="text-align: left;">Server Name</th>
+            <th style="text-align: right;">{{_serverName}}</th>
+        </thead>
+        <tr>
+            <td>Subtotal:</td>
+            <td style="text-align: right;">{{_subtotal}}</td>
+        </tr>
+        <tr>
+            <td>+ 7% Tax</td>
+            <td style="text-align: right;">{{_tax}}</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td style="text-align: right;">${{_total}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td  style="text-align: right;"><input type="button" (click)="submitOrder()" value="Submit Order" ></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td  style="text-align: right;"><input type="button" (click)="clearOrder()" value="Clear Order" ></td>
+        </tr>
+    </table>
+</ng-template>
+
+<br>
+{{ _errorMessage }}

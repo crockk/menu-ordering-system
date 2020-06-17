@@ -1,0 +1,24 @@
+  <table width='30%' style="border-collapse: collapse; padding: 5px; text-align:center" >
+    <tr>
+        <th>
+            Order Date and Time
+        </th>
+        <th>
+            Server
+        </th>
+        <th>
+            After Tax Total
+        </th>
+    </tr>
+    <tr *ngFor="let order of _ordersArray">
+        <td>
+            {{ order.orderDate }}
+        </td>
+        <td>
+            {{order.serverName}}
+        </td>
+        <td>
+            ${{order.total}}
+        </td>
+    </tr>
+</table>
