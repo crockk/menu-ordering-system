@@ -4,7 +4,7 @@
 to enter food orders, alter menu items, and view all orders on the system.
 
 
-**Setup**
+# Setup
 
 > Run this script in Mongo to initialize the fields in a MongoDB named retailerDB
 
@@ -32,7 +32,7 @@ npm install
 npm install
 ```
 
-> In an IDE of your choice, open the directory ex_fullCrud_MVC and run or debug app.js
+> In an IDE of your choice, open the directory `ex_fullCrud_MVC` and run or debug `app.js`
 
 > In a command prompt window, navigate to `angularClient/myapp` and run the following command
 
