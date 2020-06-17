@@ -6,8 +6,7 @@ to enter food orders, alter menu items, and view all orders on the system.
 
 # Setup
 
-> Run this script in Mongo to initialize the fields in a MongoDB named retailerDB
-
+> Run this script in Mongo, within a MongoDB named `retailerDB` to initialize the required table
 ```JSON
 db.products.insert(
     [
