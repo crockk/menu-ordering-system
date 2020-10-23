@@ -12,7 +12,7 @@ to enter food orders, alter menu items, and view all orders on the system.
 
 > Run this script in Mongo, within a MongoDB named `retailerDB` to initialize the required table
 ```JSON
-db.products.insert(
+db.foodItems.insert(
     [
         { _id:1, productName:'Cake Mix', price:2.99 },
         { _id:2, productName:'Cookie Dough', price:1.25 },
