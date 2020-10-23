@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const BASE_URL = "http://localhost:1337";
+const BASE_URL = "http://localhost:3000";
 
 @Component({
     selector: 'placeOrder',

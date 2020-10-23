@@ -1,6 +1,6 @@
 // Create pooled data connection.
 var mongoose = require('mongoose');
-const DB_URI = 'mongodb://localhost:27017/MenuDB';
+const DB_URI = 'mongodb://localhost:27017/retailerDB';
 let options = { useNewUrlParser: true , useUnifiedTopology: true };
 mongoose.connect(DB_URI, options);
 
@@ -28,9 +28,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-// Enable routing and use port 1337.
+// Enable routing and use port 3000.
 require('./router')(app);
-app.set('port', 1337);
+app.set('port', 3000);
 
 // Set up ejs templating.
 app.engine('ejs', engine);
