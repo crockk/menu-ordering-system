@@ -7,8 +7,8 @@ to enter food orders, alter menu items, and view all orders on the system.
 # Setup
 
 > This setup assumes you already have Node.JS and Angular installed on your computer. For information on installing these on your device, please visit their websites:
-https://angular.io/
-https://nodejs.org/en/download/
+> Angular: https://angular.io/
+>Node.js: https://nodejs.org/en/download/
 
 > Run this script in Mongo, within a MongoDB named `retailerDB` to initialize the required table
 ```JSON
